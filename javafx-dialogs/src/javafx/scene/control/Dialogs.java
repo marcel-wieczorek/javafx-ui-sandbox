@@ -1384,16 +1384,13 @@ public class Dialogs {
     
     
     static class DialogResources {
-        // Localization strings.
-        private final static ResourceBundle dialogsResourceBundle = 
-                ResourceBundle.getBundle("com.sun.javafx.scene.control.skin.resources.dialog-resources");
 
         /**
          * Method to get an internationalized string from the deployment resource.
          */
         static String getMessage(String key) {
             try {
-                return dialogsResourceBundle.getString(key);
+                return ResourceBundle.getBundle("com.sun.javafx.scene.control.skin.resources.dialog-resources").getString(key);
             } catch (MissingResourceException ex) {
                 // Do not trace this exception, because the key could be
                 // an already translated string.
@@ -1407,7 +1404,7 @@ public class Dialogs {
         */
         static String getString(String key) {
             try {
-                return dialogsResourceBundle.getString(key);
+                return ResourceBundle.getBundle("com.sun.javafx.scene.control.skin.resources.dialog-resources").getString(key);
             } catch (MissingResourceException mre) {
                 // Do not trace this exception, because the key could be
                 // an already translated string.
